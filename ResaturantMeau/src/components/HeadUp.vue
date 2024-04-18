@@ -61,7 +61,7 @@ const RestaurantInfor = {
 
 .restaurant-name {
     font-optical-sizing: auto;
-    font-weight: bold;
+    font-weight: bolder;
     font-style: normal;
     font-size: 24px;
     padding: 16px 42px;
