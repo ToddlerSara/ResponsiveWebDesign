@@ -54,7 +54,8 @@ const RestaurantInfor = {
     position: absolute;
     top: 0;
     display: flex;
-    width: 1024px;
+    max-width: 1024px;
+    width: 100%;
     height: 56px;
     justify-content: space-between;
 }
@@ -63,7 +64,7 @@ const RestaurantInfor = {
     font-optical-sizing: auto;
     font-weight: bolder;
     font-style: normal;
-    font-size: 24px;
+    font-size: 1.6rem;
     padding: 16px 42px;
 }
 

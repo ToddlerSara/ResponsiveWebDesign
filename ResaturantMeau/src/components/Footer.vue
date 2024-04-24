@@ -35,25 +35,22 @@ const RestaurantInfor = {
 
 <style lang="scss" scoped>
 .footer {
-    // bottom: 0;
-    // left: 0;
-    // width: 100%;
     background-color: #eee9e9;
-    padding: 50px 49px;
+    padding: 20px 49px;
     font-family: 微軟正黑體;
     color: #3D1101;
     display: flex;
 }
 
-.footer-info {
-    width: 299px;
-    padding: 0 21px 0 0;
-    justify-content: space-around;
-}
+// .footer-info {
+//     width: 299px;
+//     padding: 0 21px 0 0;
+//     justify-content: space-around;
+// }
 
 .footer-h {
     font-size: 24px;
-    padding: 0 0 16px 0;
+    padding: 30px 0 16px 0;
 }
 
 .footer-center {
@@ -68,5 +65,14 @@ const RestaurantInfor = {
     text-align: right;
 }
 
-/* Add your other styles here */
+@media screen and (max-width: 576px) {
+    .footer {
+        display: inline-block;
+        padding: 11px;
+    }
+
+    .footer-center {
+        width: 100%;
+    }
+}
 </style>

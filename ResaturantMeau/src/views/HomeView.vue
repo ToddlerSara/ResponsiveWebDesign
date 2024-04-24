@@ -62,11 +62,13 @@ const onSubmit = () => {
     </div>
     <div class="avatar">
       <div v-for="(item, index) in avatar" :key="index" class="avatar">
-        <img :src="item.url" class="avatar-img" />
-        <div>
-          <div>{{ item.name }}</div>
-          <div class="avatar-text">{{ item.text }}</div>
-          <div class="avatar-from">{{ item.from }}</div>
+        <div class="avatar-contain">
+          <img :src="item.url" class="avatar-img" />
+          <div>
+            <div class="avatar-name">{{ item.name }}</div>
+            <div class="avatar-text">{{ item.text }}</div>
+            <div class="avatar-from">{{ item.from }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -110,14 +112,9 @@ const onSubmit = () => {
 <style lang="scss" scoped>
 .up {
   background-color: #eee9e9;
-  padding: 50px 281px 31px 281px;
+  padding: 50px 0 31px 0;
   position: relative;
   /* Add this */
-}
-
-.border-line {
-  width: 461px;
-  border: 1px solid #979797;
 }
 
 .up-contanct {
@@ -172,25 +169,22 @@ const onSubmit = () => {
 .main-chef {
   display: flex;
   background: #3D1101;
-  width: 1024px;
-  height: 420px;
   padding: 0 42px;
   font-family: 微軟正黑體;
   color: #EFE9E7;
   font-size: 15px;
+  overflow: hidden;
 }
 
 .main-chef-img {
-  flex: 1;
-  width: 470px;
-  height: 460px;
   background-image: url('/src/assets/main_chef_brown@2x.png');
-  background-size: 96.5%;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: right;
+  padding: 247.5px;
 }
 
 .main-chef-text {
-  flex: 1;
   padding: 80px 25px 70px 25px;
 }
 
@@ -218,6 +212,7 @@ const onSubmit = () => {
   font-family: 微軟正黑體;
   color: #3D1101;
   font-size: 18px;
+  padding: 10px;
 }
 
 .avatar-img {
@@ -225,6 +220,14 @@ const onSubmit = () => {
   height: 67px;
   border-radius: 50%;
   margin: 13px;
+}
+
+.avatar-contain {
+  display: flex;
+}
+
+.avatar-name {
+  padding: 27px 0 0 0;
 }
 
 .avatar-text {
@@ -241,7 +244,7 @@ const onSubmit = () => {
 
 .order {
   display: flex;
-  margin: 38px 42px 50px 42px;
+  padding: 38px 42px 50px 42px;
 }
 
 .order-up {
@@ -255,16 +258,72 @@ const onSubmit = () => {
 }
 
 .order-img {
-  flex: 1;
-  width: 460px;
-  height: 386px;
   background-image: url('/src/assets/Map@2x.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  margin: 0 20px 0 0;
+  background-position: center;
+  margin: 0 20px;
+  padding: 230px;
 }
 
-.order-info {
-  flex: 1;
+@media screen and (min-width: 768px) {
+  .border-line {
+    width: 461px;
+    border: 1px solid #979797;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .main-chef {
+    padding: 0 11px;
+  }
+
+  .order {
+    padding: 20px 11px;
+  }
+
+  .main-chef-img {
+    padding: 199px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-chef {
+    padding: 0;
+  }
+
+  .main-chef-img {
+    background-size: cover;
+  }
+
+  .up-contanct {
+    border: 0;
+  }
+
+  .order-img {
+    margin: 0 10px;
+    padding: 182px;
+  }
+}
+
+@media screen and (max-width :576px) {
+
+  .inner,
+  .main-chef,
+  .avatar,
+  .order {
+    display: inline-block;
+  }
+
+  .inner-box {
+    width: 100%;
+  }
+
+  .order-img {
+    margin: 20px 10px;
+    padding: 149px;
+  }
 }
 </style>
